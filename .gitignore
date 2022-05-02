@@ -1,2 +1,4 @@
 gcs_scripts/iam.json.new
 gcs_scripts/iam.json.orig
+airflow/logs
+airflow/dags/data
