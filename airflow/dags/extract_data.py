@@ -17,7 +17,7 @@ def fetch_data(month,year):
     
     url_response = requests.get(f"https://data.cityofchicago.org/resource/crimes.json?$where=date_extract_m(date)='{month}' and date_extract_y(date)='{year}'")
     
-    file_name = 'chicago_crime_data_' + year + '-' + month + '.parquet' 
+    file_name = 'chicago_cime_data_' + year + '-' + month + '.parquet' 
     path = f'./data/{year}/' 
     
     try:
