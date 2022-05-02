@@ -12,7 +12,6 @@ This could serve us as a good starting ground to make further analysis , the dat
 
 >This site provides applications using data that has been modified for use from its original source, http://www.cityofchicago.org/, the official website of the City of Chicago. The City of Chicago makes no claims as to the content, accuracy, timeliness, or completeness of any of the data provided at this site. The data provided at this site is subject to change at any time. It is understood that the data provided at this site is being used at one’s own risk.
 
-## Project architecture
 
 
 ## Data Pipeline
@@ -46,13 +45,17 @@ sudo chmod +x set_up.sh
 ```
 Don't forget to add your intented credentials to `gcs_scripts/variables.sh`
 
-
-
-## Project Navigation:
 You would need service account keys:
 https://cloud.google.com/iam/docs/creating-managing-service-account-keys
 
 Don't forget to assign the roles of Storage Admin and Owner to the account.
+
+## Project Navigation:
+
+
+
+
+
 
 ## Architecture
 
@@ -69,6 +72,11 @@ The pipeline is defined as per the following architecture:
 
 ## Dashboard
 
+
 The final Dashboard can be found here:
 
+https://datastudio.google.com/u/0/reporting/ee00d6f2-579c-46ce-aaaa-d01a9e9d8f39/page/RorrC
+
 **Preview**:
+
+![alt](img/data_report.pdf)
