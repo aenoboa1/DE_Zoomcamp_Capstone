@@ -12,4 +12,3 @@ chmod +x create_projects.sh
 
 
 ./create_projects.sh 0X0X0X-0X0X0X-0X0X0X ${PROJECT_ID} ${PROJECT_EMAIL}
-  JKLKLJKLJL

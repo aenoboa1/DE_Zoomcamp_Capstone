@@ -19,10 +19,8 @@ This could serve us as a good starting ground to make further analysis , the dat
 
 The data is obtained with the `GCS_BQ_DAG` dag which makes use of the SODA API, with this API we can obtain the records of crimes by month and year, 
 
-# Introduction
 
 
-Requirements:
 
 
 
@@ -36,23 +34,32 @@ Before reproducing the project, you need some requirements:
   
 You can create a project with GCP following the instructions of the course, I have included a script to facilitate this however, you will need to have the `gcloud cli ` installed , and you should be authenticated with `gcloud auth` , to create a project quickly , simply run:
 
+
+Inside the **gcs_scripts** directory:
 ```console
-sh -c gcs_scripts/set_up.sh
+sudo chmod +x set_up.sh
 ```
-Don't forget to add your intented credentials to `gcs_scriptss/variables.sh`
+
+
+```console
+./set_up.sh
+```
+Don't forget to add your intented credentials to `gcs_scripts/variables.sh`
 
 
 
-## Project Navigatioe:
+## Project Navigation:
 You would need service account keys:
 https://cloud.google.com/iam/docs/creating-managing-service-account-keys
 
-Don't forget to assign the roles of :
+Don't forget to assign the roles of Storage Admin and Owner to the account.
 
 ## Architecture
 
 
 The pipeline is defined as per the following architecture:
+
+![alt](./img/image_01.png)
 
 - We download the data per month and year , then we upload this data to a GCP Bucket (Data Lake)
 - We transform this data and prepare with DBT to use it in a data warehouse.
