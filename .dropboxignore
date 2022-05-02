@@ -1,0 +1,8 @@
+# ----
+# Automatically Generated .dropboxignore file at Sun May  1 09:29:48 PM -05 2022
+# ----
+gcs_scripts/iam.json.new
+gcs_scripts/iam.json.orig
+airflow/logs
+airflow/dags/data
+# ----
