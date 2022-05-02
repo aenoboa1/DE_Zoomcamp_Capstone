@@ -14,10 +14,11 @@ AIRFLOW_HOME = os.environ.get("AIRFLOW_HOME", "/opt/airflow/")
 def fetch_data(month,year):
     # EXTRACT DATA PER MONTH AND YEAR 
     
-    url_response = requests.get(f"https://data.cityofchicago.org/resource/crimes.json?$where=date_extract_m(date)='{month}' and date_extract_y(date)='{year}'")
+    # Note: the SODA API has a limit of 1000 calls , we can increase those using the $limit parameter
+
+    url_response = requests.get(f"https://data.cityofchicago.org/resource/crimes.json?$where=date_extract_m(date)='{month}' and date_extract_y(date)='{year}'&$limit=100000000")
     print(url_response)
     
-    print(f"https://data.cityofchicago.org/resource/crimes.json?$where=date_extract_m(date)='{month}' and date_extract_y(date)='{year}'")
     
     file_name = 'chicago_crime_data_' + year + '-' + month + '.parquet' 
     path = f'{AIRFLOW_HOME}/{year}/' 

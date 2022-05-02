@@ -64,6 +64,8 @@ x-airflow-common:
     # TODO: Please change GCP_PROJECT_ID & GCP_GCS_BUCKET, as per your config
     GCP_GCS_BUCKET: 'crime-data-lake_crime-project-10800-gc-andrewn'
     GCP_PROJECT_ID: 'crime-project-10800-gc-andrewn' 
+    GCP_DATASET: 'crimes_data_all'
+
   volumes:
     - ./dags:/opt/airflow/dags
     - ./logs:/opt/airflow/logs

@@ -53,3 +53,8 @@ Finally, I link the newly created project with my billing id, so that the bills 
 
 
 
+
+You would need service account keys:
+https://cloud.google.com/iam/docs/creating-managing-service-account-keys
+
+Don't forget to assign the roles of :
