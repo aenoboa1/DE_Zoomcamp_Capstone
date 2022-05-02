@@ -1,0 +1,8 @@
+version: 2
+sources:
+  - name: staging
+    database: crime-project-10800-gc-andrewn
+    schema: crimes_data_all
+
+    tables:
+      - name: crimes_data_all_external_table

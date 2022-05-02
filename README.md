@@ -50,7 +50,6 @@ https://cloud.google.com/iam/docs/creating-managing-service-account-keys
 
 Don't forget to assign the roles of Storage Admin and Owner to the account.
 
-## Project Navigation:
 
 
 
