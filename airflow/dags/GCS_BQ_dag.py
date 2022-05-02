@@ -23,14 +23,8 @@ BUCKET = os.environ.get("GCP_GCS_BUCKET")
 BQ_DATASET = os.environ.get("GCP_DATASET")
 AIRFLOW_HOME = os.environ.get("AIRFLOW_HOME", "/opt/airflow/")
 
-
-
-
-#
 file_name = '/chicago_crime_data_' + '{{execution_date.strftime(\'%Y\')}}'  + '-' + '{{execution_date.strftime(\'%m\')}}' + '.parquet' 
 GCP_PATH_TEMPLATE = f"raw/{BQ_DATASET}/"+"{{execution_date.strftime(\'%Y\')}}"+file_name
-
-
 parquet_path = '/{{execution_date.strftime(\'%Y\')}}/' + file_name 
 full_path = AIRFLOW_HOME + parquet_path 
 
@@ -38,10 +32,8 @@ full_path = AIRFLOW_HOME + parquet_path
 #PATHS
 path_to_local_home = os.environ.get("AIRFLOW_HOME", "/opt/airflow/")
 
-
 INPUT_PART = "raw"
 INPUT_FILETYPE = "parquet"
-
 
 # ARGS 
 default_args = {
@@ -53,7 +45,7 @@ default_args = {
 # DAG Declaration
 with DAG(
     dag_id="gcs_bq_dag",
-     default_args=default_args,
+    default_args=default_args,
     start_date =datetime(2001,1,1), 
     schedule_interval = "0 1 1 * *",
     catchup=True,

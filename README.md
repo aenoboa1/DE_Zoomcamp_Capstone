@@ -17,23 +17,13 @@ This could serve us as a good starting ground to make further analysis , the dat
 
 ## Data Pipeline
 
-
-The data is obtained with the `data_ingestion_gcs.py` dag which makes use of the 
+The data is obtained with the `GCS_BQ_DAG` dag which makes use of the SODA API, with this API we can obtain the records of crimes by month and year, 
 
 # Introduction
 
 
 Requirements:
 
-
-## Dataset Selected:
-
-
-
-
-
-
-## Project Navigation:
 
 
 
@@ -44,17 +34,34 @@ Before reproducing the project, you need some requirements:
 - **GCP** (Google Cloud Platform) account with billing enabled, using the 300$ trial is recommended.
 - The Cloud SDK CLI tool for interacting with GCP projects , this can be helpful to manage all the services from the terminal.
   
+You can create a project with GCP following the instructions of the course, I have included a script to facilitate this however, you will need to have the `gcloud cli ` installed , and you should be authenticated with `gcloud auth` , to create a project quickly , simply run:
 
- **Billing**
- 
-
-Finally, I link the newly created project with my billing id, so that the bills come to me:
-`gcloud alpha billing accounts projects link $PROJECT_ID --account-id=$ACCOUNT_ID`
-
-
+```console
+sh -c gcs_scripts/set_up.sh
+```
+Don't forget to add your intented credentials to `gcs_scriptss/variables.sh`
 
 
+
+## Project Navigatioe:
 You would need service account keys:
 https://cloud.google.com/iam/docs/creating-managing-service-account-keys
 
 Don't forget to assign the roles of :
+
+## Architecture
+
+
+The pipeline is defined as per the following architecture:
+
+- We download the data per month and year , then we upload this data to a GCP Bucket (Data Lake)
+- We transform this data and prepare with DBT to use it in a data warehouse.
+- We crate a Dashboard that will display the relevant information required.
+
+
+
+## Dashboard
+
+The final Dashboard can be found here:
+
+**Preview**:
