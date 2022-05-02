@@ -16,7 +16,7 @@ This could serve us as a good starting ground to make further analysis , the dat
 
 ## Data Pipeline
 
-The data is obtained with the `GCS_BQ_DAG` dag which makes use of the SODA API, with this API we can obtain the records of crimes by month and year, 
+The data is obtained with the `GCS_BQ_DAG` dag which makes use of the SODA API, with this API we can obtain the records of crimes by month and year.
 
 
 
@@ -79,4 +79,4 @@ https://datastudio.google.com/u/0/reporting/ee00d6f2-579c-46ce-aaaa-d01a9e9d8f39
 
 **Preview**:
 
-![alt](img/data_report.pdf)
+![alt](img/image_02.png)
